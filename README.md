@@ -1,8 +1,5 @@
-# silk-guardian
-Silk Guardian is an anti-forensic LKM kill-switch that waits for a change on your usb ports then deletes precious files and turns off your computer.
-
- Inspired by [usbkill](https://github.com/hephaest0s/usbkill). 
- I remade this project as a Linux kernel driver for fun and to learn. Many people have contributed since, and I thank them.
+# silk-guardian-sdmem
+Forked from https://github.com/NateBrune/silk-guardian - This version uses sdmem (in insecure mode as its fast) to wipe memory and uses orderly_shutdown to gauruntee a shutdown (even if its unclean)
 
 To run:
 
@@ -41,15 +38,3 @@ There are 3 reasons (maybe more?) to use this tool:
 - Remove userspace dependancy upon shutdown ![](http://www.gia.edu/img/sprites/icon-green-check.png)
 
 More like... to-done. Way to go community you did it!
-
-### Change Log
-2.0 - Updated to use notifier interface.
-
-1.5 - Updated to use shred and remove files on shutdown
-
-1.0 - Initial release.
-
-### Contact
-
-[natebrune@gmail.com](mailto:natebrune@gmail.com)  
-https://keybase.io/natebrune
