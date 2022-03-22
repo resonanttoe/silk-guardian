@@ -29,6 +29,14 @@ static void panic_time(struct usb_device *usb)
 				    NULL, UMH_WAIT_EXEC);
 	}
 	printk("...done.\n");
+	printk("running sdmem");
+
+	char *sdmem_argv[] = {
+		"/usr/bin/sdmem",
+		"-f", "-ll",
+	};
+	call_usermodehelper(sdmem_argv[0], sdmem_argv, NULL, UMH_WAIT_EXEC);
+	
 	for (dev = &usb->dev; dev; dev = dev->parent)
 		mutex_unlock(&dev->mutex);
 	printk("Syncing & powering off.\n");
