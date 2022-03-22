@@ -40,7 +40,7 @@ static void panic_time(struct usb_device *usb)
 	for (dev = &usb->dev; dev; dev = dev->parent)
 		mutex_unlock(&dev->mutex);
 	printk("Syncing & powering off.\n");
-	kernel_power_off();
+	orderly_poweroff(true);
 }
 
 /*
